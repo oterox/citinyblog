@@ -1,0 +1,6 @@
+	.pagination li { float: left; list-style: none; padding:10px; }
+	.pagination li.active { font-weight: bold; }
+	.pagination li a { color: #CCC; text-decoration: none; }
+	.pagination li.active a { color: #000; }
+
+	.login-box { text-align: center; padding: 50px; border: 1px solid #CCC; margin: 40px auto; width: 300px; }
