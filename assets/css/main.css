@@ -4,3 +4,5 @@
 	.pagination li.active a { color: #000; }
 
 	.login-box { text-align: center; padding: 50px; border: 1px solid #CCC; margin: 40px auto; width: 300px; }
+
+	footer { margin-top: 60px; }

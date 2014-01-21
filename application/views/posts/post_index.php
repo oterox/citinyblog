@@ -26,6 +26,11 @@
 
 							<p><a href="<?php echo base_url();?>post/<?php echo $row['postID'];?>">Read More</a></p>
 
+							<p>
+								<a href="#" class="label label-default"><span>Wordpress</span></a>
+								<a href="#" class="label label-default"><span>JQuery</span></a>
+								<a href="#" class="label label-default"><span>CodeIgniter</span></a>
+							</p>
 							<hr>
 							<?php			
 						}

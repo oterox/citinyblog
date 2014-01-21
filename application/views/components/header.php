@@ -37,8 +37,8 @@
                 <li><a href="#contact">Contact</a></li>
                 
                 <?php if($this->session->userdata('userID')){ ?>
-                <li><a href="#"><?php echo 'username: ' . $this->session->userdata('username'); ?></a></li>
-                <li><a href="<?=base_url()?>admin/users/logout">Logout</a></li>
+                <li><p class="navbar-text"><?php echo 'Logged in as ' . $this->session->userdata('username'); ?></p></li>
+                <li><a href="<?=base_url()?>admin/users/logout"><span class="glyphicon glyphicon-log-out"></span>Logout</a></li>
                 <?php } else { ?>
                 <li><a href="<?=base_url()?>admin/users/login">Login</a></li>
                 <?php } ?>
