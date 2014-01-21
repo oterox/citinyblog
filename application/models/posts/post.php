@@ -2,19 +2,16 @@
 
 class Post extends CI_Model{
 	
-        function get_post_count(){
-                $this->db->select('postID')->from('posts')->where('active', 1);
-                $query = $this->db->get();
-                return $query->num_rows();
+	function get_post_count(){
+		$this->db->select('postID')->from('posts')->where('active', 1);
+		$query = $this->db->get();
+		return $query->num_rows();
 
-        }
+	}
 
 	function get_posts( $num=20, $start=0 )	{
-		
 		$this->db->select()->from('posts')->where('active',1)->order_by('date_added','desc')->limit($num, $start);
-
 		$query = $this->db->get();
-
 		return $query->result_array();
 	}
 
@@ -25,7 +22,6 @@ class Post extends CI_Model{
 	}
 
 	function insert_post($data){
-
 		$this->db->insert('posts',$data);
 		return $this->db->insert_id();
 	}
@@ -39,4 +35,5 @@ class Post extends CI_Model{
 		$this->db->where('postID',$postID);
 		$this->db->delete('posts');
 	}
+
 }
