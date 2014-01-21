@@ -38,6 +38,8 @@ class Posts extends CI_Controller {
 
 	function post($postID){
 		$data['post'] = $this->post->get_post($postID);
+		$data['sidebar'] = 'mainsidebar';
+		
 		$this->load->view('posts/post',$data);
 	}
 
