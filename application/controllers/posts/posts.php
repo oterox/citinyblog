@@ -92,6 +92,7 @@ class Posts extends CI_Controller {
 			$data=array(
 				'title'=>$_POST['title'],
 				'post'=>$_POST['post'],
+				'slug'=> url_title($_POST['title'], 'dash', true),
 				'active'=>1
 				);		
 			$this->post->update_post($postID,$data);
