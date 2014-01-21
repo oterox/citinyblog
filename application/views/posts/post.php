@@ -8,7 +8,7 @@
 							?>
 								<h2><?php echo $post['title'];?></h2>
 
-								<p><?php echo $post['post'] ?></p>
+								<article><?php echo nl2br($post['post']); ?></article>
 
 							<?php			
 						

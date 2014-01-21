@@ -22,7 +22,7 @@
 							
 							?>
 
-							<p><?php echo substr(strip_tags($row['post']),0,200) . '...' ?></p>
+							<p><?php echo substr(nl2br($row['post']),0,400) . '...' ?></p>
 
 							<p><a href="<?php echo base_url();?>post/<?php echo $row['postID'];?>">Read More</a></p>
 
