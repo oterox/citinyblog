@@ -13,8 +13,8 @@
 						
 							if( $user_type == 'admin' || $user_type == 'author'){ ?>
 								<p>
-									<a href="<?php echo base_url();?>posts/edit_post/<?=$post['postID'];?>">edit</a> - 
-					 				<a href="<?php echo base_url();?>posts/delete_post/<?=$post['postID'];?>">delete</a>
+									<a href="<?php echo base_url();?>posts/edit_post/<?=$post['slug'];?>">edit</a> - 
+					 				<a href="<?php echo base_url();?>posts/delete_post/<?=$post['slug'];?>">delete</a>
 								</p>						
 								<?php 
 							}	

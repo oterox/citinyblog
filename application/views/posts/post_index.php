@@ -5,7 +5,7 @@
 						echo '<p>NO Posts</p>';
 					} else {
 						foreach ($posts as $row) {	?>
-							<h2><a href="<?php echo base_url();?>post/<?php echo $row['postID'];?>"><?php echo $row['title'];?></a></h2>
+							<h2><a href="<?php echo base_url();?>post/<?php echo $row['slug'];?>"><?php echo $row['title'];?></a></h2>
 							
 							<?php
 							
@@ -14,8 +14,8 @@
 							
 								if( $user_type == 'admin' || $user_type == 'author'){ ?>
 									<p>
-										<a href="<?php echo base_url();?>posts/edit_post/<?=$row['postID'];?>">edit</a> - 
-						 				<a href="<?php echo base_url();?>posts/delete_post/<?=$row['postID'];?>">delete</a>
+										<a href="<?php echo base_url();?>posts/edit_post/<?=$row['slug'];?>">edit</a> - 
+						 				<a href="<?php echo base_url();?>posts/delete_post/<?=$row['slug'];?>">delete</a>
 									</p>						
 									<?php 
 								}	
@@ -24,7 +24,7 @@
 
 							<p><?php echo substr(nl2br($row['post']),0,400) . '...' ?></p>
 
-							<p><a href="<?php echo base_url();?>post/<?php echo $row['postID'];?>">Read More</a></p>
+							<p><a href="<?php echo base_url();?>post/<?php echo $row['slug'];?>">Read More</a></p>
 
 							<p>
 								<a href="#" class="label label-default"><span>Wordpress</span></a>

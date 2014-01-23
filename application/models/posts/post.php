@@ -15,8 +15,8 @@ class Post extends CI_Model{
 		return $query->result_array();
 	}
 
-	function get_post($postID){
-		$this->db->select()->from('posts')->where(array('postID'=>$postID))->order_by('date_added','desc');
+	function get_post($slug){
+		$this->db->select()->from('posts')->where(array('slug'=>$slug))->order_by('date_added','desc');
 		$query = $this->db->get();
 		return $query->first_row('array');
 	}
@@ -26,13 +26,13 @@ class Post extends CI_Model{
 		return $this->db->insert_id();
 	}
 
-	function update_post($postID,$data){
-		$this->db->where('postID',$postID);
+	function update_post($slug,$data){
+		$this->db->where('slug',$slug);
 		$this->db->update('posts',$data);
 	}
 
-	function delete_post($postID){
-		$this->db->where('postID',$postID);
+	function delete_post($slug){
+		$this->db->where('slug',$slug);
 		$this->db->delete('posts');
 	}
 

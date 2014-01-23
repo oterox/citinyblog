@@ -57,8 +57,8 @@ class Posts extends CI_Controller {
 		$this->load->view('posts/post_index', $data);
 	}
 
-	function post($postID){
-		$data['post'] = $this->post->get_post($postID);
+	function post($slug){
+		$data['post'] = $this->post->get_post($slug);
 		$data['sidebar'] = 'mainsidebar';
 
 		$this->load->view('posts/post',$data);
@@ -82,7 +82,7 @@ class Posts extends CI_Controller {
 		}
 	}
 
-	function edit_post($postID){
+	function edit_post($slug){
 		$user_type = $this->session->userdata('user_type');
 		if($user_type != 'admin' && $user_type != 'author'){
 			redirect(base_url().'admin/users/login');
@@ -95,19 +95,19 @@ class Posts extends CI_Controller {
 				'slug'=> url_title($_POST['title'], 'dash', true),
 				'active'=>1
 				);		
-			$this->post->update_post($postID,$data);
+			$this->post->update_post($slug,$data);
 			$data['success']=1;
 		}
-		$data['post'] = $this->post->get_post($postID);
+		$data['post'] = $this->post->get_post($slug);
 		$this->load->view('posts/edit_post',$data);
 	}
 
-	function delete_post($postID){
+	function delete_post($slug){
 		$user_type = $this->session->userdata('user_type');
 		if($user_type != 'admin' && $user_type != 'author'){
 			redirect(base_url().'admin/users/login');
 		}
-		$this->post->delete_post($postID);
+		$this->post->delete_post($slug);
 		redirect(base_url());
 	}
 }
